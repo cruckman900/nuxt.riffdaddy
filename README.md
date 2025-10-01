@@ -22,7 +22,7 @@ See [`LICENSE.txt`](./LICENSE.txt) for full terms, including:
 
 ## 📦 Related Repos
 
-- [fanTABulous Backend](https://github.com/yourusername/fantabulous-backend) — FastAPI-powered tab parsing and metadata extraction
+- [fanTABulous Backend](https://github.com/cruckman900/baselinepy.ro) — FastAPI-powered tab parsing and metadata extraction
 
 ---
 
