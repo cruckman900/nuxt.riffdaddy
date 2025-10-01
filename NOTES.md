@@ -1,3 +1,13 @@
+## 🌌 Nuxt Frontier — fanTABulous Scaffold — Oct 1, 2025 @ 3:52 PM EDT
+
+Ventured into Nuxt territory to build fanTABulous frontend:
+- Tab uploads, parsing, previews, and changelogs scaffolded
+- ThemeSwitcher prepped for public release
+- Dynamic routing and SVG manipulation supported
+- Backend integration via server/api proxies
+
+Status: Frontend scaffold complete. Ready to wire up endpoints and riff across the Vueverse.  
+
 ## 🎨 Frontend Magic Begins — Oct 1, 2025 @ 6:01 PM EDT
 
 Created minimal Nuxt project with:
