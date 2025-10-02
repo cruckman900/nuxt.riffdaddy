@@ -174,3 +174,80 @@ Fix:
 - Option 2: Downgrade to Tailwind v3 for manual config generation
 
 Status: Tailwind now styling correctly. Config optional unless customizing theme.  
+
+## 🎸 Tailwind v4 Blues — Downgraded to v3.4.1 — Oct 1, 2025 @ 9:18 PM EDT
+
+Error: `tailwindcss used directly as PostCSS plugin`  
+Cause: Tailwind v4 requires `@tailwindcss/postcss`, which conflicts with Nuxt module  
+Fix:
+- Uninstalled Tailwind v4
+- Installed Tailwind v3.4.1 with PostCSS and Autoprefixer
+- Cleaned up `nuxt.config.ts`
+- Restarted dev server
+
+Status: Nuxt boots clean. Tailwind styles active. Tab preview riffing again.  
+
+## 🎛️ Tailwind Path Resolved — Styles Still Missing — Oct 1, 2025 @ 10:05 PM EDT
+
+Nuxt resolved Tailwind CSS from `~/../assets/css/tailwind.css`  
+Confirmed: path points to root-level `assets/css/tailwind.css`  
+Issue: Styles still not applying  
+Next steps:
+- Drop test block with Tailwind classes
+- Inspect DOM and network tab for CSS injection
+- Confirm Tailwind directives in CSS file
+
+Status: Tailwind file found. Injection pending.  
+
+## 🎨 Fallback Style Block Injected — CSS Pipeline Check — Oct 1, 2025 @ 10:08 PM EDT
+
+Issue: Tailwind styles not applying  
+Fix: Injected raw CSS via `<style>` block in `pages/preview.vue`  
+Confirmed:
+- If styled: browser is applying CSS, Tailwind injection is broken
+- If not styled: layout or CSS pipeline is blocked
+
+Status: Fallback test deployed. Awaiting visual confirmation.  
+
+## 🎛️ Style Tag Relocated — Vite Warning Silenced — Oct 1, 2025 @ 10:10 PM EDT
+
+Error: `<style>` tag inside `<template>` block  
+Cause: Vue SFCs require `<style>` at root level  
+Fix: Moved `<style>` outside `<template>` in `pages/index.vue`  
+Confirmed fallback styles still render
+
+Status: Warning gone. Styles clean. Layout riffing.  
+
+## 🎨 Tailwind Directives Found — PostCSS Rewired — Oct 1, 2025 @ 10:15 PM EDT
+
+Confirmed: `assets/css/tailwind.css` contains valid Tailwind directives  
+Issue: File found, but styles not compiling  
+Fix:
+- Installed Tailwind v3.4.1, PostCSS, and Autoprefixer
+- Created `postcss.config.js` with Tailwind plugin
+- Updated `nuxt.config.ts` to use absolute path
+- Restarted dev server
+
+Status: Tailwind directives now compiling. Styles rendering.  
+
+## 🎨 Vuetify Installed — Material Design Activated — Oct 1, 2025 @ 10:25 PM EDT
+
+Decision: Switch from Tailwind to Vuetify for Material Design consistency  
+Fix:
+- Installed `vuetify`, `vite-plugin-vuetify`, and `@mdi/font`
+- Updated `nuxt.config.ts` with Vuetify plugin and CSS
+- Created `plugins/vuetify.ts` to initialize Vuetify
+- Dropped test button using `<v-btn>`
+
+Status: Vuetify now active. Layout styled with Material Design.  
+
+## 🎨 Vuetify Merge — Tailwind Retired — Oct 1, 2025 @ 10:30 PM EDT
+
+Action: Swapped Tailwind for Vuetify (Material Design)  
+Fix:
+- Preserved Vuetify setup and branding metadata
+- Removed Tailwind module, CSS file, and PostCSS config
+- Merged `modules` array cleanly
+- Replaced Tailwind classes with Vuetify components
+
+Status: Styling pipeline rebooted. fanTABulous now riffing with Material Design.  

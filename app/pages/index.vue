@@ -1,4 +1,6 @@
 <!-- app/pages/index.vue -->
 <template>
-    <h1>hi</h1>
+  <v-container class="pa-4">
+    <v-btn color="primary">🎸 Click Me</v-btn>
+  </v-container>
 </template>

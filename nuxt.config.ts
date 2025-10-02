@@ -1,5 +1,32 @@
 // nuxt.config.ts
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+
 export default defineNuxtConfig({
+    css: [
+        'vuetify/lib/styles/main.sass',
+        '@mdi/font/css/materialdesignicons.css'
+    ],
+    build: {
+        transpile: ['vuetify']
+    },
+    modules: [
+        '@nuxt/eslint',
+        '@nuxt/image',
+        '@nuxt/test-utils',
+        (_options, nuxt) => {
+            nuxt.hooks.hook('vite:extendConfig', (config) => {
+                // @ts-expect-error
+                config.plugins.push(vuetify({ autoImport: true }))
+            })
+        }
+    ],
+    vite: {
+        vue: {
+            template: {
+                transformAssetUrls
+            }
+        }
+    },
     app: {
         head: {
             title: 'fanTABulous',
@@ -31,7 +58,5 @@ export default defineNuxtConfig({
                 { rel: 'manifest', href: '/site.webmanifest' }
             ],
         }
-    },
-
-    modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image', '@nuxt/test-utils', '@nuxtjs/tailwindcss']
+    }
 });
