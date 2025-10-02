@@ -105,3 +105,72 @@ Selected:
 - `@nuxt/devtools` for debugging
 
 Status: Project initialized with power pedals. Ready to riff.  
+
+## 🎨 UI Direction — Custom Components — Oct 1, 2025 @ 7:26 PM EDT
+
+Decided to skip prefab UI modules  
+Building custom components from scratch:
+- Full control over layout and styling
+- Scoped CSS or Tailwind (optional)
+- Auto-import via Nuxt’s component magic
+
+Status: UI stack now hand-built. Every riff, every pixel, fully yours.
+
+## 🎸 Tab Preview Layout + Tailwind Jam — Oct 1, 2025 @ 7:38 PM EDT
+
+Created `layouts/default.vue` with dark theme and slot  
+Built `pages/preview.vue` to display tab snippet  
+Used Tailwind for layout, scoped CSS for custom flair  
+Strategy: Learn Tailwind by riffing, not by doctrine
+
+Status: Layout live. Tab preview ready to shred.  
+
+## 🎛️ ESLint Override — default.vue — Oct 1, 2025 @ 7:44 PM EDT
+
+ESLint flagged `default.vue` for single-word component name  
+Added exception in `.eslintrc.js`:
+- `'vue/multi-word-component-names': ['error', { ignores: ['default'] }]`
+
+Status: Squiggle silenced. Layout name preserved. Nuxt harmony restored.  
+
+## 🧠 Global Types Fix — Vue Extension — Oct 1, 2025 @ 7:55 PM EDT
+
+Error: Failed to write global types file  
+Resolved by:
+- Installing Vue directly with `npm install vue`
+- Ensuring `node_modules/` exists
+- Restarting Vue and TS servers in VS Code
+- Optionally setting `vueCompilerOptions.globalTypesPath` in `tsconfig.json`
+
+Status: IDE harmony restored. Type hints riffing again.  
+
+## 🎸 Dynamic Tab Route — [id].vue Fixed — Oct 1, 2025 @ 8:25 PM EDT
+
+Error: `[plugin:vite:vue] At least one <template> or <script> is required`  
+Cause: `app/pages/tabs/[id].vue` was empty  
+Fix: Added minimal `<template>` and `<script setup>` block  
+Confirmed route renders at `/tabs/:id`
+
+Status: Dynamic tab route now riffing. Ready to wire backend next.  
+
+## 🎨 Tailwind v4 PostCSS Error — Purged & Rewired — Oct 1, 2025 @ 8:56 PM EDT
+
+Error: `tailwindcss used directly as PostCSS plugin`  
+Cause: Tailwind v4 requires `@tailwindcss/postcss` unless using Nuxt module  
+Fix:
+- Removed manual PostCSS config
+- Uninstalled raw Tailwind packages
+- Installed via `nuxi module add tailwindcss`
+- Confirmed `@nuxtjs/tailwindcss` in `nuxt.config.ts`
+
+Status: Nuxt boots clean. Tailwind styles active. PostCSS pipeline restored.  
+
+## 🎨 Tailwind v4 Init Error — Explained & Resolved — Oct 1, 2025 @ 9:05 PM EDT
+
+Error: `npx tailwindcss init -p` failed with “could not determine executable to run”  
+Cause: Tailwind v4 removed the `init` command  
+Fix:
+- Option 1: Use default config with Nuxt module (recommended)
+- Option 2: Downgrade to Tailwind v3 for manual config generation
+
+Status: Tailwind now styling correctly. Config optional unless customizing theme.  
